@@ -14,10 +14,7 @@ namespace C__RPG_Backend.models
         public int Defense { get; set; } = 10;
         public int Intelligence { get; set; } = 10;
         public RpgClass Class { get; set; } = RpgClass.Knight;
-
-        internal int Max(Func<object, object> value)
-        {
-            throw new NotImplementedException();
-        }
+        // one - many relationship
+        public User? User { get; set; }
     }
 }

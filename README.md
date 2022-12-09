@@ -5,6 +5,6 @@ Inspired by classic RPG video games. This backend was built to simulate a profes
 Please note: Due to learning purposes, included are notes taken from both the web and the [ASP.NET/C#](https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-7.0&tabs=visual-studio) docs.
 
 ***Languages and Tools:***
-Entity Frameworks | C# | ASP.NET 7 | SQL Lite | AutoMapper
+Entity Frameworks | C# | ASP.NET 7 | SQL Lite | AutoMapper | JWT
 
 

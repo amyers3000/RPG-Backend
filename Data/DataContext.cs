@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 // Add connections string
 // Add to services
 // dotnet ef -h for help
-// create first migration - dotnet ef migrations add IntialCreate
+// create first migration - dotnet ef migrations add IntialCreate(whatever you want to name migration)
 // create table(will run last migration) - dotnet ef database update
 // use SQLite extension to see table (shift commantd p) - search SQLite and opiton should show
 
@@ -24,5 +24,6 @@ namespace C__RPG_Backend.Data
         }
         // name of prop is the name of the table; if you want to add more tables you add another DbSet with the generic type of your model
         public DbSet<Character> Characters { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }
