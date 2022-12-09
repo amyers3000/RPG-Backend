@@ -25,5 +25,7 @@ namespace C__RPG_Backend.Data
         // name of prop is the name of the table; if you want to add more tables you add another DbSet with the generic type of your model
         public DbSet<Character> Characters { get; set; }
         public DbSet<User> Users { get; set; }
+        
+
     }
 }

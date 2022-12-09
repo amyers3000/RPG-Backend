@@ -26,6 +26,7 @@ builder.Services.AddSwaggerGen(c => {
     });
     c.OperationFilter<SecurityRequirementsOperationFilter>();
 });
+builder.Services.AddHttpContextAccessor();
 // setting up Automapper for DTO; installed from dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection --version 12.0.0
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 builder.Services.AddScoped<ICharacterService, CharacterService>();

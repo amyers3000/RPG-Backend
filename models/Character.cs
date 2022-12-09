@@ -16,5 +16,6 @@ namespace C__RPG_Backend.models
         public RpgClass Class { get; set; } = RpgClass.Knight;
         // one - many relationship
         public User? User { get; set; }
+        
     }
 }

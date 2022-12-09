@@ -27,8 +27,7 @@ namespace C__RPG_Backend.Controllers
         // ActionResult enables us to send HTTP status codes with actual data that was requested
         public async Task<ActionResult<ServiceResponse<List<GetCharacterDTO>>>> Get()
         {
-            int userId = int.Parse(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value);
-            return Ok(await _characterService.GetAllCharacters(userId));
+            return Ok(await _characterService.GetAllCharacters());
         }
         
         [HttpGet("{id}")]
