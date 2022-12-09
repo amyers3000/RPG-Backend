@@ -22,10 +22,23 @@ namespace C__RPG_Backend.Data
         {
             
         }
+
+        //Seeding Skills
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Skill>().HasData(
+                new Skill { Id = 1, Name = "Fireball", Damage = 30},
+                new Skill { Id = 2, Name = "Frenzy", Damage = 20},
+                new Skill { Id = 3, Name = "Blizzard", Damage = 15}
+            );
+
+        }
+
         // name of prop is the name of the table; if you want to add more tables you add another DbSet with the generic type of your model
         public DbSet<Character> Characters { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Weapon> Weapons { get; set; }
+        public DbSet<Skill> Skills { get; set; }
         
 
     }
