@@ -16,6 +16,7 @@ namespace C__RPG_Backend
             CreateMap<Character, GetCharacterDTO>();
             CreateMap<AddCharacterDTO, Character>();
             CreateMap<UpdateCharacterDTO, Character>();
+            CreateMap<Weapon, GetWeaponDTO>();
         }
     }
 }
