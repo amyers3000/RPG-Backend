@@ -10,7 +10,7 @@ namespace C__RPG_Backend.services.CharacterService
     public interface ICharacterService
     {
         // Task added for async functionality. Allows thread to open up and return whent await task is complete
-        Task<ServiceResponse<List<GetCharacterDTO>>> GetAllCharacters();
+        Task<ServiceResponse<List<GetCharacterDTO>>> GetAllCharacters(int userId);
         Task<ServiceResponse<GetCharacterDTO>> GetCharacterById(int id);
         Task<ServiceResponse<List<GetCharacterDTO>>> AddCharacter(AddCharacterDTO newCharacter);
         Task<ServiceResponse<GetCharacterDTO>> UpdateCharacter(UpdateCharacterDTO updatedCharacter);

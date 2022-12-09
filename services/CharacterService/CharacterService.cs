@@ -38,11 +38,13 @@ namespace C__RPG_Backend.services.CharacterService
             return serviceResponse;
         }
 
-        public async Task<ServiceResponse<List<GetCharacterDTO>>> GetAllCharacters()
+        public async Task<ServiceResponse<List<GetCharacterDTO>>> GetAllCharacters(int userId)
         {
             // Changes each item in list (Linq Select) to GetCharacterDTO and then into list to be returned to client
             var response = new ServiceResponse<List<GetCharacterDTO>>();
-            var dbCharacters = await _context.Characters.ToListAsync();
+            var dbCharacters = await _context.Characters
+                .Where(c => c.User.Id == userId)
+                .ToListAsync();
             response.Data = dbCharacters.Select(c => _mapper.Map<GetCharacterDTO>(c)).ToList();
             return response;
         }
