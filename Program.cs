@@ -1,10 +1,15 @@
 global using C__RPG_Backend.models;
+using C__RPG_Backend.Data;
 using C__RPG_Backend.services.CharacterService;
+using Microsoft.EntityFrameworkCore;
 // Allows the models to be accessed throughout the entire app
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+// Connects DB to app
+builder.Services.AddDbContext<DataContext>(options => {
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
