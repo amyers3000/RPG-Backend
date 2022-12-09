@@ -12,6 +12,7 @@ namespace C__RPG_Backend
     {
         public AutoMapperProfile()
         {
+            // first parameter is source and seconde is what it is being mapped to
             CreateMap<Character, GetCharacterDTO>();
             CreateMap<AddCharacterDTO, Character>();
             CreateMap<UpdateCharacterDTO, Character>();

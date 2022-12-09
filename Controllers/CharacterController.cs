@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 using C__RPG_Backend.DTOs.Character;
 using C__RPG_Backend.services.CharacterService;
 using Microsoft.AspNetCore.Mvc;
-// Service removes logic allowing controller not to become "fat". Good use to slim down controllers and hold duplicate code. Injected into controllers via dependency injection
+// Service removes logic allowing controller not to become "fat". Good use to slim down controllers and hold duplicate code.
+// Injected into controllers via dependency injection
 // Task added for async functionality. Allows thread to open up and return whent await task is complete
 namespace C__RPG_Backend.Controllers
 {

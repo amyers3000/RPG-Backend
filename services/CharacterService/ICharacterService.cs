@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using C__RPG_Backend.DTOs.Character;
-// Interfaces are decarative and only show implementation in dervied class. In a way it's like a contract with classes derived from it. Allows concrete classes not to be used and loose coupling
+// Interfaces are decarative and only show implementation in dervied class. In a way it's like a contract with classes derived from it. 
+//Allows concrete classes not to be used and loose coupling
 namespace C__RPG_Backend.services.CharacterService
 {
     public interface ICharacterService
