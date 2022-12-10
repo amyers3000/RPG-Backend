@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using C__RPG_Backend.DTOs.Character;
+using C__RPG_Backend.DTOs.Skill;
 // need to create maps for the mapping which is done by a profile
 // Could make a profile for every single mapping but not necessary
 namespace C__RPG_Backend
@@ -17,6 +18,7 @@ namespace C__RPG_Backend
             CreateMap<AddCharacterDTO, Character>();
             CreateMap<UpdateCharacterDTO, Character>();
             CreateMap<Weapon, GetWeaponDTO>();
+            CreateMap<Skill, GetSkillDTO>();
         }
     }
 }
