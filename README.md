@@ -24,7 +24,9 @@ Only 30 attribute points can be assigned to a character. There are 3 attributes:
 ***Skills***
 
 Mages are more susceptible to Archer attacks - increased odds of a critical strike
+
 Warriors are more susceptible to Mage attacks - increased odds of a critical strike
+
 Archers are more susceptible to Warrior attacks - increased odds of a critical strike
 
 | Id | Skill | Damage | Type |
