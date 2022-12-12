@@ -12,5 +12,7 @@ namespace C__RPG_Backend.models
         public int Damage { get; set; }
         public Character Character { get; set; }
         public int CharacterId { get; set; }
+
+        public RpgClass Type { get; set; } = RpgClass.Warrior;
     }
 }

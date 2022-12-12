@@ -6,9 +6,9 @@ namespace C__RPG_Backend.models
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum RpgClass
     {
-        Knight = 1,
+        Warrior = 1,
         Mage = 2,
-        Cleric = 3,
+        Archer = 3,
         
     }
 }

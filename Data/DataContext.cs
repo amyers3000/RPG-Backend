@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using C__RPG_Backend.models;
 using Microsoft.EntityFrameworkCore;
 
 // Install Entitly Frameworks CLI globally (done)
@@ -29,8 +30,14 @@ namespace C__RPG_Backend.Data
             modelBuilder.Entity<Skill>().HasData(
                 new Skill { Id = 1, Name = "Fireball", Damage = 30},
                 new Skill { Id = 2, Name = "Frenzy", Damage = 20},
-                new Skill { Id = 3, Name = "Blizzard", Damage = 15}
+                new Skill { Id = 3, Name = "Blizzard", Damage = 15},
+                new Skill { Id = 4, Name = "Thunder", Damage = 10},
+                new Skill { Id = 5, Name = "Side-Swipe", Damage = 5},
+                new Skill { Id = 6, Name = "Slasher", Damage = 40}
             );
+
+
+           
 
         }
 

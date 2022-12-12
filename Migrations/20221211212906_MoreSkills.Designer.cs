@@ -3,6 +3,7 @@ using System;
 using C__RPG_Backend.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CRPGBackend.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20221211212906_MoreSkills")]
+    partial class MoreSkills
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.0");
@@ -26,13 +29,7 @@ namespace CRPGBackend.Migrations
                     b.Property<int>("Class")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Defeats")
-                        .HasColumnType("INTEGER");
-
                     b.Property<int>("Defense")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Fights")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("HitPoints")
@@ -49,9 +46,6 @@ namespace CRPGBackend.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<int?>("UserId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Victories")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
@@ -155,9 +149,6 @@ namespace CRPGBackend.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("TEXT");
-
-                    b.Property<int>("Type")
-                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 

@@ -37,10 +37,16 @@ namespace C__RPG_Backend.services.WeaponService
                     return response;
                 }
 
+                var damage = new Random().Next(30) + new Random().Next(character.Intelligence);
+                if(character.Class == newWeapon.Type){
+                    damage += new Random().Next(10);
+                }
+
                 Weapon weapon = new Weapon {
                     Name = newWeapon.Name,
-                    Damage = newWeapon.Damage,
-                    Character = character
+                    Damage = damage,
+                    Character = character,
+                    Type = newWeapon.Type
                 };
                 _context.Weapons.Add(weapon);
                 await _context.SaveChangesAsync();

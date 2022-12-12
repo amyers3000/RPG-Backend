@@ -35,6 +35,12 @@ namespace C__RPG_Backend.services.CharacterService
         {   
             // new service response object made every time a method is called passing the type
             var serviceResponse = new ServiceResponse<List<GetCharacterDTO>>();
+            var skillPoints = newCharacter.Intelligence + newCharacter.Strength + newCharacter.Defense;
+            if( skillPoints >= 31 ){
+                serviceResponse.Success = false;
+                serviceResponse.Message = "Only 30 skill points available";
+                return serviceResponse;
+            }
             // This maps AddCharacterDTO to character so it can be added to characters
             Character character = _mapper.Map<Character>(newCharacter);
             character.User = await _context.Users.FirstOrDefaultAsync(u => u.Id == GetUserId());
@@ -54,7 +60,7 @@ namespace C__RPG_Backend.services.CharacterService
             // Changes each item in list (Linq Select) to GetCharacterDTO and then into list to be returned to client
             var response = new ServiceResponse<List<GetCharacterDTO>>();
             var dbCharacters = await _context.Characters
-                .Include(c => c.Weapon)
+                .Include(c => c.Skills)
                 .Include(c => c.Weapon)
                 .Where(c => c.User.Id == GetUserId())
                 .ToListAsync();
@@ -66,7 +72,7 @@ namespace C__RPG_Backend.services.CharacterService
         {
             var serviceResponse = new ServiceResponse<GetCharacterDTO>();
             var dbCharacter = await _context.Characters
-                .Include(c => c.Weapon)
+                .Include(c => c.Skills)
                 .Include(c => c.Weapon)
                 .FirstOrDefaultAsync(c => c.Id == id && c.User.Id == GetUserId());
             // Brackets show what value type it should be mapped too and the parameter is the actual object that is mapped
@@ -83,6 +89,8 @@ namespace C__RPG_Backend.services.CharacterService
             {
                 var character = await _context.Characters
                     .Include(c => c.User)
+                    .Include(c => c.Weapon)
+                    .Include(c => c.Skills)
                     .FirstOrDefaultAsync(c => c.Id == updateCharacter.Id);
                     //only can access related objects when DBcontext is still available for example in above method; use include to have access to object after that
                 if(character.User.Id == GetUserId())
