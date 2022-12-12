@@ -1,6 +1,6 @@
 **RPG Player .NET Backend**
 
-Inspired by classic RPG video games, this API allows users to create characters, assign skills and weapons, view all characters that belong to them, initate fights and view the current highscore. This backend was built to simulate a professional web service API. The applicaiton uses techniques and best practices such as Service Response Objects, DTOs, Dependency Injections, Services, Seeding Data and follows an MVC archtecture. This API was constructed to help solidfy my .NET/C# knowledge and help draw comparisons between other backend languages/framewords such as Node.js.
+I built this backend to simulate a professional web service API. Inspired by classic RPG video games, this API allows users to create characters, assign skills and weapons, view all characters that belong to them, initiate fights, and view the current high score. The application uses techniques and best practices such as Response Objects, DTOs, Dependency Injections, Services, and Seeding Data and follows an MVC architecture. I constructed this API to help solidify my .NET/C# knowledge and help draw comparisons between other backend languages/frameworks such as Node.js.
 
 Please note: Due to learning purposes, the second branch includes notes taken from both the web and the [ASP.NET/C#](https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-7.0&tabs=visual-studio) docs.
 
