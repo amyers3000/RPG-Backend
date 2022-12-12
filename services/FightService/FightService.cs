@@ -110,6 +110,9 @@ namespace C__RPG_Backend.services.FightService
         private static int DoSkillAttack(Character? attacker, Character? opponent, Skill? skill)
         {
             int damage = skill.Damage + (new Random().Next(attacker.Intelligence));
+            if( opponent.Class == RpgClass.Warrior && skill.Type == RpgClass.Mage) damage += new Random().Next(10);
+            if( opponent.Class == RpgClass.Mage && skill.Type == RpgClass.Archer) damage += new Random().Next(10);
+            if( opponent.Class == RpgClass.Archer && skill.Type == RpgClass.Warrior) damage += new Random().Next(10);
             damage -= new Random().Next(opponent.Defense);
 
             if (damage > 0)

@@ -4,8 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace C__RPG_Backend.Controllers
 {
-    [ApiController]
-    [Route("controller")]
+   [ApiController]
+    [Route("[controller]")]
     public class FightController : ControllerBase
     {
         private readonly IFightService _fightService;
