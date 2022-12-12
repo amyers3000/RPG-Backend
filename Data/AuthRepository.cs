@@ -1,11 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using System.Security.Cryptography.X509Certificates;
 using System.IdentityModel.Tokens.Jwt;
 
 namespace C__RPG_Backend.Data
@@ -72,10 +67,8 @@ namespace C__RPG_Backend.Data
            }
            return false;
         }
-        //out allow formal parameters to be passed by reference; out argument does not need to be intialized
         private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {
-            // Using keyword defines a scope at the end of which an object will be disposed of; under the hood it's similar to a finally block
             using (var hmac = new System.Security.Cryptography.HMACSHA512())
             {
                 passwordSalt = hmac.Key;
@@ -89,7 +82,6 @@ namespace C__RPG_Backend.Data
             using (var hmac = new System.Security.Cryptography.HMACSHA512(passwordSalt))
             {
                 var computeHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
-                // Have to check arrays byte by byte; could do for loop or use SequenceEqual
                 return computeHash.SequenceEqual(passwordHash);
             }
         }

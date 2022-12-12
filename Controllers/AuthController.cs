@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using C__RPG_Backend.Data;
 using C__RPG_Backend.DTOs.User;
 using Microsoft.AspNetCore.Mvc;
@@ -23,7 +19,7 @@ namespace C__RPG_Backend.Controllers
         public async Task<ActionResult<ServiceResponse<int>>> Register(UserRegisterDTO request)
         {
             var response = await _authRepo.Register(
-                // User parameter allows us to attach other information during registration if wanted
+
                 new User { Username = request.Username}, request.Password
             );
             if(!response.Success){
